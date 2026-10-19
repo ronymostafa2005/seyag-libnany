@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="3J', 'DD(F'FJ">
+  <rect width="64" height="64" rx="16" fill="#071c1a"/>
+  <path d="M13 18v34M51 18v34" stroke="#e8d4a6" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M13 28h38" stroke="#c4533c" stroke-width="1.8" stroke-linecap="round"/>
+  <g fill="#e8d4a6">
+    <path d="M32 12c3.2 0 7 3.6 7 7.4-3 .8-5 2-7 4.2-2-2.2-4-3.4-7-4.2 0-3.8 3.8-7.4 7-7.4z"/>
+    <path d="M32 21.5c5.2 0 11 4.6 11 9.6-5-1.6-8-1-11 2.2-3-3.2-6-3.8-11-2.2 0-5 5.8-9.6 11-9.6z"/>
+    <path d="M32 30.5c6.4 0 14 5.4 14 12-6-2.2-10-1.2-14 3.2-4-4.4-8-5.4-14-3.2 0-6.6 7.6-12 14-12z"/>
+    <path d="M30.3 44.2h3.4V52h-3.4z"/>
+  </g>
+</svg>

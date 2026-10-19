@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-cairo), "Segoe UI", Tahoma, sans-serif;
+  --color-ink: #14241f;
+  --color-sea: #0f6e68;
+  --color-sea-deep: #071c1a;
+  --color-foam: #e5f3f0;
+  --color-sand: #f3eee4;
+  --color-paper: #fffdf8;
+  --color-gold: #b8893d;
+  --color-gold-soft: #e8d4a6;
+  --color-coral: #c4533c;
+  --color-line: #e3d9c8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(1200px 500px at 0% -10%, rgba(15, 110, 104, 0.08), transparent 55%),
+    var(--color-sand);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-gold-soft);
+  color: var(--color-sea-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+.site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  background: #071c1a;
+  color: #f3eee4;
+}
+
+.site-loader.is-leaving {
+  animation: loader-lift 0.7s cubic-bezier(0.77, 0, 0.18, 1) forwards;
+}
+
+.logo-post {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: post-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.logo-rail {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: rail-draw 0.6s 0.35s ease forwards;
+}
+
+.logo-cedar {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: post-rise 0.85s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.loader-name {
+  margin-top: 28px;
+  font-size: 2.4rem;
+  font-weight: 800;
+  animation: rise 0.7s 0.35s both;
+}
+
+.loader-latin {
+  margin-top: 6px;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  color: #e8d4a6;
+  animation: rise 0.7s 0.5s both;
+}
+
+.loader-city {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: rgba(243, 238, 228, 0.65);
+  animation: rise 0.7s 0.65s both;
+}
+
+.float-chip {
+  animation: float-y 5.5s ease-in-out infinite;
+}
+
+.marquee-track {
+  animation: marquee 38s linear infinite;
+}
+
+.rise {
+  animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes post-rise {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes rail-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes loader-lift {
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
