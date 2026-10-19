@@ -1,4 +1,4 @@
-const whatsappNumber = "201153490204";
+const whatsappNumber = "201222650380";
 
 export const office = {
   name: "سياج اللبناني",
@@ -9,9 +9,9 @@ export const office = {
   tunnel: "نفق 45",
   street: "شارع 45",
   city: "الإسكندرية",
-  phone: "01153490204",
-  phoneDisplay: "\u20660115 349 0204\u2069",
-  phoneHref: "tel:+201153490204",
+  phone: "01222650380",
+  phoneDisplay: "\u20660122 265 0380\u2069",
+  phoneHref: "tel:+201222650380",
   whatsappNumber,
   whatsappHref: `https://wa.me/${whatsappNumber}`,
   hours: "الأحد — الخميس، 9:00 إلى 17:00",

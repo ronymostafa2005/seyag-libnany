@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s — سياج اللبناني",
   },
   description:
-    "سياج اللبناني مكتب توظيف في نفق 45، شارع 45، الإسكندرية. اسأل عن وظيفة أو قدّم على واتساب: 01153490204.",
+    "سياج اللبناني مكتب توظيف في نفق 45، شارع 45، الإسكندرية. اسأل عن وظيفة أو قدّم على واتساب: 01222650380.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
