@@ -1,15 +1,15 @@
 export const categories = [
-  "Technology",
-  "Accounting",
-  "Sales",
-  "Design",
-  "Engineering",
-  "Health",
-  "Hospitality",
-  "Operations",
+  "تقنية",
+  "محاسبة",
+  "مبيعات",
+  "تصميم",
+  "هندسة",
+  "صحة",
+  "ضيافة",
+  "تشغيل",
 ] as const;
 
-export const jobTypes = ["Full-time", "Part-time", "Remote", "Contract"] as const;
+export const jobTypes = ["دوام كامل", "دوام جزئي", "عن بُعد", "عقد"] as const;
 
 export type Category = (typeof categories)[number];
 export type JobType = (typeof jobTypes)[number];

@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { JobCard } from "@/components/JobCard";
 import { categories, jobTypes, type Job } from "@/lib/types";
 
-const all = "All";
+const all = "الكل";
 
 export function JobsExplorer({ jobs }: { jobs: Job[] }) {
   const [query, setQuery] = useState("");
@@ -26,11 +26,11 @@ export function JobsExplorer({ jobs }: { jobs: Job[] }) {
     <div className="mx-auto max-w-6xl px-5 py-10">
       <div className="rounded-[32px] border border-line bg-paper p-4 md:p-5">
         <label className="block">
-          <span className="sr-only">Search roles</span>
+          <span className="sr-only">بحث في الوظائف</span>
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search by title, company, or district"
+            placeholder="ابحث بالعنوان أو الشركة أو الحي"
             className="w-full rounded-2xl border border-line bg-sand px-4 py-3 outline-none"
           />
         </label>
@@ -65,11 +65,11 @@ export function JobsExplorer({ jobs }: { jobs: Job[] }) {
       </div>
 
       <p className="mt-6 text-sm text-ink/60">
-        {visible.length} role{visible.length === 1 ? "" : "s"} showing
+        يظهر {visible.length} {visible.length === 1 ? "وظيفة" : "وظائف"}
       </p>
       {visible.length === 0 ? (
         <p className="mt-8 rounded-[28px] border border-dashed border-line bg-paper px-6 py-12 text-center text-ink/70">
-          Nothing matches today. Try another field, or ask the office on WhatsApp.
+          لا شيء يطابق اليوم. جرّب مجالًا آخر، أو اسأل المكتب على واتساب.
         </p>
       ) : (
         <div className="mt-4 grid gap-4 md:grid-cols-2">

@@ -4,7 +4,7 @@ import { clean, digits, isEgyptianMobile } from "@/lib/validate";
 
 export async function POST(request: Request) {
   const body = await readBody(request);
-  if (!body) return Response.json({ error: "The form could not be read." }, { status: 400 });
+  if (!body) return Response.json({ error: "تعذّر قراءة النموذج." }, { status: 400 });
 
   const kind = body.kind === "employer" ? "employer" : body.kind === "visit" ? "visit" : "";
   const name = clean(body.name, 80);
@@ -13,11 +13,11 @@ export async function POST(request: Request) {
   const topic = clean(body.topic, 140);
   const message = clean(body.message, 1000);
 
-  if (!kind) return Response.json({ error: "Unknown message type." }, { status: 400 });
-  if (name.length < 3) return Response.json({ error: "Enter your name." }, { status: 400 });
-  if (!isEgyptianMobile(phone)) return Response.json({ error: "Enter a valid Egyptian mobile number." }, { status: 400 });
+  if (!kind) return Response.json({ error: "نوع الرسالة غير معروف." }, { status: 400 });
+  if (name.length < 3) return Response.json({ error: "اكتب اسمك." }, { status: 400 });
+  if (!isEgyptianMobile(phone)) return Response.json({ error: "اكتب رقم موبايل مصري صحيح." }, { status: 400 });
   if (kind === "employer" && company.length < 2) {
-    return Response.json({ error: "Enter the company name." }, { status: 400 });
+    return Response.json({ error: "اكتب اسم الشركة." }, { status: 400 });
   }
 
   const lead: Lead = {

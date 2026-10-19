@@ -10,18 +10,18 @@ import Link from "next/link";
 const stations = [
   {
     n: "01",
-    title: "Ask on WhatsApp",
-    text: "A question about a role opens a chat with the office. No lost inboxes.",
+    title: "اسأل على واتساب",
+    text: "سؤال عن وظيفة يفتح محادثة مع المكتب. لا صناديق تضيع.",
   },
   {
     n: "02",
-    title: "We sit for a quarter hour",
-    text: "A short meeting at Tunnel 45. We listen to what you actually do.",
+    title: "نجلس ربع ساعة",
+    text: "لقاء قصير عند نفق 45. نسمع ما تعمله فعلًا.",
   },
   {
     n: "03",
-    title: "One introduction",
-    text: "One company that fits, not ten adverts. The reply comes back on the same chat.",
+    title: "تعريف واحد",
+    text: "شركة واحدة تناسبك، لا عشرة إعلانات. الرد يرجع على نفس المحادثة.",
   },
 ];
 
@@ -35,12 +35,12 @@ export default function HomePage() {
 
       <section className="mx-auto grid max-w-6xl gap-4 px-5 py-14 md:grid-cols-3">
         {[
-          ["Open roles", String(jobs.length).padStart(2, "0")],
-          ["First reply", "On a working day"],
-          ["Interviews", office.tunnel],
+          ["وظائف مفتوحة", String(jobs.length).padStart(2, "0")],
+          ["أول رد", "في يوم عمل"],
+          ["المقابلات", office.tunnel],
         ].map(([label, value], index) => (
           <Reveal key={label} delay={index * 0.08}>
-            <div className="rounded-[28px] border border-line bg-paper px-6 py-7">
+            <div className="rounded-[28px] border border-white/70 bg-paper/75 px-6 py-7 shadow-sm backdrop-blur">
               <p className="text-sm text-ink/50">{label}</p>
               <p className="mt-3 text-3xl font-extrabold text-sea-deep">{value}</p>
             </div>
@@ -51,11 +51,11 @@ export default function HomePage() {
       <section className="mx-auto max-w-6xl px-5">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="text-sm font-semibold text-sea">This week</p>
-            <h2 className="mt-2 text-4xl font-extrabold">Roles the office is actually working.</h2>
+            <p className="text-sm font-semibold text-sea">هذا الأسبوع</p>
+            <h2 className="mt-2 text-4xl font-extrabold">وظائف يشتغل عليها المكتب فعلًا.</h2>
           </div>
           <Link href="/jobs" className="font-semibold text-sea">
-            All roles →
+            كل الوظائف ←
           </Link>
         </div>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -69,8 +69,8 @@ export default function HomePage() {
 
       <section className="mx-auto mt-20 max-w-6xl px-5">
         <Reveal>
-          <p className="text-sm font-semibold text-sea">Three steps</p>
-          <h2 className="mt-2 max-w-2xl text-4xl font-extrabold">A fence, not a funnel of noise.</h2>
+          <p className="text-sm font-semibold text-sea">ثلاث خطوات</p>
+          <h2 className="mt-2 max-w-2xl text-4xl font-extrabold">سياج، لا قمع من الإعلانات.</h2>
         </Reveal>
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {stations.map((station, index) => (
@@ -88,25 +88,25 @@ export default function HomePage() {
       <section className="mx-auto mt-20 grid max-w-6xl gap-4 px-5 md:grid-cols-2">
         <Reveal>
           <article className="h-full rounded-[32px] border border-line bg-paper p-7">
-            <p className="text-sm text-sea">Looking for work</p>
-            <h2 className="mt-3 text-3xl font-extrabold">Start with one role, on WhatsApp.</h2>
+            <p className="text-sm text-sea">تبحث عن عمل</p>
+            <h2 className="mt-3 text-3xl font-extrabold">ابدأ بوظيفة واحدة، على واتساب.</h2>
             <p className="mt-4 leading-8 text-ink/70">
-              Open a listing and apply in the chat, or ask a question first. The line is {office.phoneDisplay}.
+              افتح إعلانًا وقدّم في المحادثة، أو اسأل أولًا. الخط هو {office.phoneDisplay}.
             </p>
             <Link href="/jobs" className="mt-6 inline-flex rounded-full bg-ink px-5 py-3 text-sand">
-              See the roles
+              شاهد الوظائف
             </Link>
           </article>
         </Reveal>
         <Reveal delay={0.08}>
           <article className="h-full rounded-[32px] border border-line bg-foam p-7">
-            <p className="text-sm text-sea">Hiring</p>
-            <h2 className="mt-3 text-3xl font-extrabold">Describe the day, not the slogan.</h2>
+            <p className="text-sm text-sea">للتوظيف</p>
+            <h2 className="mt-3 text-3xl font-extrabold">صف يوم العمل، لا الشعار.</h2>
             <p className="mt-4 leading-8 text-ink/70">
-              We meet candidates on Street 45 before anyone is sent to you. You receive a few people, after we have sat with them.
+              نقابل المرشحين في شارع 45 قبل أن يصل أحد إليك. تصلك أسماء قليلة، بعد أن نجلس معهم.
             </p>
             <Link href="/employers" className="mt-6 inline-flex rounded-full bg-sea px-5 py-3 text-paper">
-              Request candidates
+              اطلب مرشحين
             </Link>
           </article>
         </Reveal>
@@ -118,10 +118,10 @@ export default function HomePage() {
         </Reveal>
         <Reveal delay={0.08}>
           <div>
-            <p className="text-sm font-semibold text-sea">Visit</p>
-            <h2 className="mt-2 text-4xl font-extrabold">The address is part of the name.</h2>
+            <p className="text-sm font-semibold text-sea">زيارة</p>
+            <h2 className="mt-2 text-4xl font-extrabold">العنوان جزء من الاسم.</h2>
             <p className="mt-4 leading-8 text-ink/75">
-              {office.hours}. If you are running late for the tunnel, message before you turn back.
+              {office.hours}. لو هتتأخر عند النفق، ابعت رسالة قبل ما ترجع.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
@@ -130,10 +130,10 @@ export default function HomePage() {
                 rel="noreferrer"
                 className="rounded-full bg-sea-deep px-5 py-3 font-semibold text-sand"
               >
-                WhatsApp {office.phoneDisplay}
+                واتساب {office.phoneDisplay}
               </a>
               <a href={office.phoneHref} className="rounded-full border border-line bg-paper px-5 py-3 font-semibold">
-                Call
+                اتصل
               </a>
             </div>
           </div>

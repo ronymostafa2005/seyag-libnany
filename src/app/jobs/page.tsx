@@ -4,17 +4,17 @@ import { PageHero } from "@/components/PageHero";
 import { jobs } from "@/lib/jobs";
 
 export const metadata: Metadata = {
-  title: "Roles",
-  description: "Open roles through Siyaj Al-Lubnani in Alexandria. Apply on WhatsApp.",
+  title: "الوظائف",
+  description: "وظائف مفتوحة عبر سياج اللبناني في الإسكندرية. التقديم على واتساب.",
 };
 
 export default function JobsPage() {
   return (
     <>
       <PageHero
-        kicker="Open roles"
-        title="Roles we are working now."
-        text="Every listing passed through the office. Choose one, then apply or ask about it on WhatsApp."
+        kicker="وظائف مفتوحة"
+        title="وظائف نشتغل عليها الآن."
+        text="كل إعلان مرّ على المكتب. اختر واحدًا، ثم قدّم أو اسأل عنه على واتساب."
       />
       <JobsExplorer jobs={jobs} />
     </>

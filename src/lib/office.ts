@@ -4,17 +4,17 @@ export const office = {
   name: "سياج اللبناني",
   latin: "Siyaj Al-Lubnani",
   short: "Siyaj",
-  tagline: "Recruitment",
-  address: "Tunnel 45, Street 45, Alexandria",
-  tunnel: "Tunnel 45",
-  street: "Street 45",
-  city: "Alexandria",
+  tagline: "للتوظيف",
+  address: "نفق 45، شارع 45، الإسكندرية",
+  tunnel: "نفق 45",
+  street: "شارع 45",
+  city: "الإسكندرية",
   phone: "01153490204",
-  phoneDisplay: "0115 349 0204",
+  phoneDisplay: "\u20660115 349 0204\u2069",
   phoneHref: "tel:+201153490204",
   whatsappNumber,
   whatsappHref: `https://wa.me/${whatsappNumber}`,
-  hours: "Sunday — Thursday, 9:00 to 17:00",
+  hours: "الأحد — الخميس، 9:00 إلى 17:00",
   mapsHref: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("نفق 45 شارع 45 الإسكندرية")}`,
 } as const;
 
@@ -23,11 +23,11 @@ export function whatsappUrl(message: string) {
 }
 
 export function askJobMessage(title: string) {
-  return `Hello ${office.name}, I would like to ask about the ${title} role.`;
+  return `مرحبًا ${office.name}، أريد السؤال عن وظيفة ${title}.`;
 }
 
 export function generalAskMessage() {
-  return `Hello ${office.name}, I would like to ask about a job.`;
+  return `مرحبًا ${office.name}، أريد السؤال عن وظيفة.`;
 }
 
 export function applyMessage(input: {
@@ -38,11 +38,11 @@ export function applyMessage(input: {
   note: string;
 }) {
   const lines = [
-    `Hello ${office.name},`,
-    `I would like to apply for ${input.title} at ${input.company}.`,
-    `Name: ${input.name}`,
-    `Phone: ${input.phone}`,
+    `مرحبًا ${office.name}،`,
+    `أريد التقديم على ${input.title} في ${input.company}.`,
+    `الاسم: ${input.name}`,
+    `الموبايل: ${input.phone}`,
   ];
-  if (input.note) lines.push(`Note: ${input.note}`);
+  if (input.note) lines.push(`ملاحظة: ${input.note}`);
   return lines.join("\n");
 }

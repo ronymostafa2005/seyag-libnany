@@ -3,24 +3,25 @@ import { Logo } from "@/components/Logo";
 import { generalAskMessage, office, whatsappUrl } from "@/lib/office";
 
 const links = [
-  { href: "/jobs", label: "Roles" },
-  { href: "/employers", label: "Employers" },
-  { href: "/about", label: "The office" },
-  { href: "/contact", label: "Visit" },
+  { href: "/jobs", label: "الوظائف" },
+  { href: "/employers", label: "أصحاب الأعمال" },
+  { href: "/about", label: "المكتب" },
+  { href: "/contact", label: "الزيارة" },
 ];
 
 export function SiteFooter() {
   return (
-    <footer className="mt-20 bg-sea-deep text-sand">
+    <footer className="relative mt-20 bg-sea-deep text-sand">
+      <div className="h-1 bg-gradient-to-r from-sea via-glow to-gold" />
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr]">
         <div>
           <Logo variant="plain" tone="onDark" />
           <p className="mt-3 max-w-sm leading-8 text-sand/75">
-            A recruitment office at {office.address}. Ask about a role, or send an application, on WhatsApp.
+            مكتب توظيف في {office.address}. اسأل عن وظيفة، أو أرسل طلبًا، على واتساب.
           </p>
         </div>
         <div>
-          <p className="text-sm text-gold-soft">Office</p>
+          <p className="text-sm text-gold-soft">المكتب</p>
           <ul className="mt-4 space-y-2">
             {links.map((link) => (
               <li key={link.href}>
@@ -31,13 +32,13 @@ export function SiteFooter() {
             ))}
             <li>
               <Link href="/desk" className="text-sand/50 hover:text-white">
-                Office desk
+                المكتب الداخلي
               </Link>
             </li>
           </ul>
         </div>
         <div>
-          <p className="text-sm text-gold-soft">WhatsApp</p>
+          <p className="text-sm text-gold-soft">واتساب</p>
           <a
             href={whatsappUrl(generalAskMessage())}
             target="_blank"

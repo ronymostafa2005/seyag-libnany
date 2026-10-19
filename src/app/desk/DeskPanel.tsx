@@ -41,7 +41,7 @@ export function DeskPanel() {
       body: JSON.stringify({ code }),
     });
     if (!response.ok) {
-      setError("That code is not right.");
+      setError("هذا الرمز غير صحيح.");
       return;
     }
     await load();
@@ -53,25 +53,25 @@ export function DeskPanel() {
   }
 
   if (!ready) {
-    return <p className="px-5 py-20 text-center text-ink/60">Opening the desk...</p>;
+    return <p className="px-5 py-20 text-center text-ink/60">جارٍ فتح المكتب...</p>;
   }
 
   if (!data) {
     return (
       <form onSubmit={login} className="mx-auto max-w-md px-5 py-20">
-        <p className="text-sm text-sea">Office desk</p>
-        <h1 className="mt-2 text-4xl font-extrabold">Enter the office code.</h1>
-        <p className="mt-3 leading-8 text-ink/70">On this machine the trial code is 4545. Change it with DESK_CODE.</p>
+        <p className="text-sm text-sea">المكتب الداخلي</p>
+        <h1 className="mt-2 text-4xl font-extrabold">أدخل رمز المكتب.</h1>
+        <p className="mt-3 leading-8 text-ink/70">على هذا الجهاز الرمز التجريبي 4545. غيّره عبر DESK_CODE.</p>
         <input
           value={code}
           onChange={(event) => setCode(event.target.value)}
           inputMode="numeric"
           className="mt-6 w-full rounded-2xl border border-line bg-paper px-4 py-3"
-          placeholder="Code"
+          placeholder="الرمز"
         />
         {error ? <p className="mt-3 text-sm text-coral">{error}</p> : null}
         <button type="submit" className="mt-4 rounded-full bg-sea-deep px-5 py-3 font-semibold text-sand">
-          Open the desk
+          افتح المكتب
         </button>
       </form>
     );
@@ -81,32 +81,32 @@ export function DeskPanel() {
     <section className="mx-auto max-w-6xl px-5 py-12">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <p className="text-sm text-sea">Office desk</p>
-          <h1 className="mt-2 text-4xl font-extrabold">Applications and messages.</h1>
+          <p className="text-sm text-sea">المكتب الداخلي</p>
+          <h1 className="mt-2 text-4xl font-extrabold">الطلبات والرسائل.</h1>
         </div>
         <button type="button" onClick={logout} className="rounded-full border border-line bg-paper px-4 py-2 text-sm">
-          Close
+          إغلاق
         </button>
       </div>
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
         <List
-          title="Applications"
-          empty="No applications yet."
+          title="الطلبات"
+          empty="لا طلبات بعد."
           rows={data.applications.map((item) => ({
             id: item.id,
             title: item.name,
             meta: `${item.jobTitle} · ${item.phone}`,
-            body: item.note || item.email || "No note",
+            body: item.note || item.email || "بدون ملاحظة",
             time: item.createdAt,
           }))}
         />
         <List
-          title="Visits and companies"
-          empty="No messages yet."
+          title="الزيارات والشركات"
+          empty="لا رسائل بعد."
           rows={data.leads.map((item) => ({
             id: item.id,
             title: item.kind === "employer" ? item.company || item.name : item.name,
-            meta: `${item.kind === "employer" ? "Company" : "Visit"} · ${item.phone}`,
+            meta: `${item.kind === "employer" ? "شركة" : "زيارة"} · ${item.phone}`,
             body: `${item.topic}${item.message ? ` — ${item.message}` : ""}`,
             time: item.createdAt,
           }))}
@@ -138,7 +138,7 @@ function List({
               <p className="mt-1 text-sm text-sea">{row.meta}</p>
               <p className="mt-2 text-sm leading-7 text-ink/75">{row.body}</p>
               <p className="mt-2 text-xs text-ink/45">
-                {new Intl.DateTimeFormat("en-GB", { dateStyle: "medium", timeStyle: "short" }).format(new Date(row.time))}
+                {new Intl.DateTimeFormat("ar-EG", { dateStyle: "medium", timeStyle: "short" }).format(new Date(row.time))}
               </p>
             </li>
           ))}

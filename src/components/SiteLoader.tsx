@@ -20,7 +20,7 @@ export function SiteLoader() {
 
   return (
     <div className={`site-loader ${phase === "out" ? "is-leaving" : ""}`} role="status" aria-live="polite">
-      <LogoMark variant="plain" animated className="h-28 w-28" />
+      <LogoMark variant="plain" animated className="h-40 w-40" />
       <p className="loader-name" dir="rtl">{office.name}</p>
       <p className="loader-latin">{office.latin}</p>
       <p className="loader-city">{office.city}</p>

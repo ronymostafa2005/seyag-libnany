@@ -5,7 +5,7 @@ import type { Application, Lead } from "@/lib/types";
 const cookieName = "nafaq_desk";
 
 export async function GET(request: Request) {
-  if (!authed(request)) return Response.json({ error: "Office code required." }, { status: 401 });
+  if (!authed(request)) return Response.json({ error: "رمز المكتب مطلوب." }, { status: 401 });
   const [applications, leads] = await Promise.all([
     readList<Application>("applications.json"),
     readList<Lead>("leads.json"),
@@ -16,7 +16,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   const body = await readBody(request);
   const code = typeof body?.code === "string" ? body.code : "";
-  if (!codeMatches(code)) return Response.json({ error: "That code is not right." }, { status: 401 });
+  if (!codeMatches(code)) return Response.json({ error: "هذا الرمز غير صحيح." }, { status: 401 });
 
   return new Response(JSON.stringify({ ok: true }), {
     status: 200,

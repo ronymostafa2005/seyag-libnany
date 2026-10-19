@@ -11,7 +11,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
   const job = getJob(id);
-  if (!job) return { title: "Role" };
+  if (!job) return { title: "وظيفة" };
   return { title: job.title, description: job.summary };
 }
 
@@ -24,7 +24,7 @@ export default async function JobPage({ params }: { params: Promise<{ id: string
     <article className="mx-auto grid max-w-6xl gap-8 px-5 py-12 lg:grid-cols-[1.3fr_0.7fr]">
       <div>
         <Link href="/jobs" className="text-sm text-sea">
-          ← All roles
+          ← كل الوظائف
         </Link>
         <p className="mt-6 text-sm text-sea">
           {job.category} · {job.type}
@@ -35,9 +35,9 @@ export default async function JobPage({ params }: { params: Promise<{ id: string
         </p>
         <dl className="mt-8 grid gap-3 sm:grid-cols-3">
           {[
-            ["Pay", job.salary],
-            ["Experience", job.experience],
-            ["Posted", formatPosted(job.postedAt)],
+            ["الأجر", job.salary],
+            ["الخبرة", job.experience],
+            ["النشر", formatPosted(job.postedAt)],
           ].map(([label, value]) => (
             <div key={label} className="rounded-3xl border border-line bg-paper px-4 py-4">
               <dt className="text-xs text-ink/50">{label}</dt>
@@ -46,8 +46,8 @@ export default async function JobPage({ params }: { params: Promise<{ id: string
           ))}
         </dl>
         <p className="mt-8 text-lg leading-9">{job.description}</p>
-        <Section title="The day itself" items={job.responsibilities} />
-        <Section title="What we look for" items={job.requirements} />
+        <Section title="يوم العمل" items={job.responsibilities} />
+        <Section title="ما نبحث عنه" items={job.requirements} />
       </div>
       <aside className="lg:pt-16">
         <div className="lg:sticky lg:top-24">

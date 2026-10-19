@@ -8,7 +8,7 @@ export function PageHero({
   text: string;
 }) {
   return (
-    <section className="border-b border-line bg-paper">
+    <section className="border-b border-white/60 bg-paper/50">
       <div className="mx-auto max-w-6xl px-5 py-14 md:py-20">
         <p className="text-sm font-semibold text-sea rise">{kicker}</p>
         <h1 className="rise mt-3 max-w-4xl text-4xl font-extrabold leading-[1.15] md:text-6xl" style={{ animationDelay: "80ms" }}>

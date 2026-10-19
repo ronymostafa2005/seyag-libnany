@@ -4,22 +4,22 @@ import { Reveal } from "@/components/Reveal";
 import { office } from "@/lib/office";
 
 export const metadata: Metadata = {
-  title: "The office",
-  description: "Siyaj Al-Lubnani, a recruitment office at Tunnel 45, Street 45, Alexandria.",
+  title: "المكتب",
+  description: "سياج اللبناني، مكتب توظيف في نفق 45، شارع 45، الإسكندرية.",
 };
 
 const beliefs = [
   {
-    title: "The address is visible",
-    text: "You know where we sit before you send a page. Tunnel 45, Street 45, Alexandria.",
+    title: "العنوان ظاهر",
+    text: "تعرف أين نجلس قبل أن ترسل صفحة. نفق 45، شارع 45، الإسكندرية.",
   },
   {
-    title: "A meeting before an introduction",
-    text: "We do not forward CVs in a pile. We sit with the person, then choose one company.",
+    title: "لقاء قبل التعريف",
+    text: "لا نمرّر السير الذاتية في كومة. نجلس مع الشخص، ثم نختار شركة واحدة.",
   },
   {
-    title: "WhatsApp is the door",
-    text: `Questions and applications come in on ${office.phoneDisplay}. If we miss it, we reply the same working day.`,
+    title: "واتساب هو الباب",
+    text: `الأسئلة والطلبات تصل على ${office.phoneDisplay}. لو فاتتنا رسالة، نرد في نفس يوم العمل.`,
   },
 ];
 
@@ -28,14 +28,14 @@ export default function AboutPage() {
     <>
       <PageHero
         kicker={office.name}
-        title="Named as a fence, not a megaphone."
-        text="سياج اللبناني keeps a boundary around a good match. We are a recruitment office on Street 45, at Tunnel 45, in Alexandria."
+        title="اسمه سياج، لا مكبّر صوت."
+        text="سياج اللبناني يحفظ حدًا حول التوافق الجيد. نحن مكتب توظيف في شارع 45، عند نفق 45، في الإسكندرية."
       />
       <section className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[0.8fr_1.2fr]">
         <Reveal>
           <p className="text-5xl font-extrabold leading-tight text-sea-deep">{office.name}</p>
           <p className="mt-4 leading-8 text-ink/70">
-            The Arabic name stays on the door. The conversation, from the first question to the application, happens on WhatsApp.
+            الاسم العربي على الباب. المحادثة، من أول سؤال حتى التقديم، تتم على واتساب.
           </p>
         </Reveal>
         <div className="space-y-4">

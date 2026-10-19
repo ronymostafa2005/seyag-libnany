@@ -3,6 +3,7 @@ import { Cairo } from "next/font/google";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteLoader } from "@/components/SiteLoader";
+import { WhatsAppFab } from "@/components/WhatsAppFab";
 import "./globals.css";
 
 const cairo = Cairo({
@@ -14,20 +15,26 @@ const cairo = Cairo({
 
 export const metadata: Metadata = {
   title: {
-    default: "Siyaj Al-Lubnani — Recruitment in Alexandria",
-    template: "%s — Siyaj Al-Lubnani",
+    default: "سياج اللبناني — توظيف في الإسكندرية",
+    template: "%s — سياج اللبناني",
   },
   description:
-    "سياج اللبناني is a recruitment office at Tunnel 45, Street 45, Alexandria. Ask about a role or apply on WhatsApp: 01153490204.",
+    "سياج اللبناني مكتب توظيف في نفق 45، شارع 45، الإسكندرية. اسأل عن وظيفة أو قدّم على واتساب: 01153490204.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" dir="ltr" className={cairo.variable}>
+    <html lang="ar" dir="rtl" data-theme="cedar" className={cairo.variable} suppressHydrationWarning>
       <body className="min-h-screen antialiased">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem("siyaj-theme");if(t==="cedar"||t==="dusk"||t==="ember"||t==="tide"){document.documentElement.setAttribute("data-theme",t)}}catch(e){}})();`,
+          }}
+        />
         <SiteLoader />
         <SiteHeader />
         <main>{children}</main>
+        <WhatsAppFab />
         <SiteFooter />
       </body>
     </html>

@@ -16,11 +16,11 @@ export function ApplyForm({ job }: { job: Job }) {
     const name = fields.name.trim();
     const phone = fields.phone.replace(/[^\d]/g, "");
     if (name.length < 3) {
-      setError("Enter your name.");
+      setError("اكتب اسمك.");
       return;
     }
     if (!/^01[0125]\d{8}$/.test(phone)) {
-      setError("Enter a valid Egyptian mobile number.");
+      setError("اكتب رقم موبايل مصري صحيح.");
       return;
     }
     setError("");
@@ -49,28 +49,29 @@ export function ApplyForm({ job }: { job: Job }) {
         className="flex items-center justify-between rounded-[28px] border border-line bg-foam px-5 py-4"
       >
         <span>
-          <span className="block text-sm text-sea">A question, not an application</span>
-          <span className="mt-1 block font-bold">Ask about this role</span>
+          <span className="block text-sm text-sea">سؤال، لا طلب توظيف</span>
+          <span className="mt-1 block font-bold">اسأل عن هذه الوظيفة</span>
         </span>
-        <span aria-hidden="true">→</span>
+        <span aria-hidden="true">←</span>
       </a>
 
       <form onSubmit={onSubmit} className="rounded-[28px] border border-line bg-paper p-6">
-        <h2 className="text-2xl font-extrabold">Apply on WhatsApp</h2>
+        <h2 className="text-2xl font-extrabold">قدّم على واتساب</h2>
         <p className="mt-2 text-sm leading-7 text-ink/65">
-          Your name and mobile open a chat with سياج اللبناني, already filled with this role.
+          اسمك وموبايلك يفتحان محادثة مع سياج اللبناني، وفيها هذه الوظيفة جاهزة.
         </p>
         <div className="mt-5 space-y-3">
-          <Field label="Name" value={fields.name} onChange={(name) => setFields({ ...fields, name })} />
+          <Field label="الاسم" value={fields.name} onChange={(name) => setFields({ ...fields, name })} />
           <Field
-            label="Mobile"
+            label="الموبايل"
             value={fields.phone}
             inputMode="tel"
             placeholder="01xxxxxxxxx"
+            dir="ltr"
             onChange={(phone) => setFields({ ...fields, phone })}
           />
           <label className="block text-sm">
-            Short note
+            ملاحظة قصيرة
             <textarea
               value={fields.note}
               onChange={(event) => setFields({ ...fields, note: event.target.value })}
@@ -81,10 +82,10 @@ export function ApplyForm({ job }: { job: Job }) {
         </div>
         {error ? <p className="mt-3 text-sm text-coral">{error}</p> : null}
         {sent ? (
-          <p className="mt-3 text-sm text-sea">WhatsApp should be open. If it did not, use the button again.</p>
+          <p className="mt-3 text-sm text-sea">المفروض واتساب اتفتح. لو ما اتفتحش، اضغط الزر تاني.</p>
         ) : null}
         <button type="submit" className="mt-5 w-full rounded-full bg-sea-deep py-3 font-semibold text-sand">
-          Continue on WhatsApp
+          كمّل على واتساب
         </button>
       </form>
     </div>
@@ -97,18 +98,21 @@ function Field({
   onChange,
   placeholder,
   inputMode,
+  dir,
 }: {
   label: string;
   value: string;
   onChange: (value: string) => void;
   placeholder?: string;
   inputMode?: "tel" | "text";
+  dir?: "ltr" | "rtl";
 }) {
   return (
     <label className="block text-sm">
       {label}
       <input
         required
+        dir={dir}
         inputMode={inputMode}
         placeholder={placeholder}
         value={value}

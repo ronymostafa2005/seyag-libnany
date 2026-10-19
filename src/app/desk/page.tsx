@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DeskPanel } from "@/app/desk/DeskPanel";
 
 export const metadata: Metadata = {
-  title: "Office desk",
+  title: "المكتب الداخلي",
   robots: { index: false, follow: false },
 };
 
